@@ -1,9 +1,6 @@
 import React from "react";
 import "../App.css"
 
-const Button = ({answer, className}) => (
-    <button className={className}>{answer}</button>
-)
 
 const Questions = ({ 
     showAnswers,
