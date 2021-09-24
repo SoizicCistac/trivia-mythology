@@ -22,3 +22,15 @@ button{
 .correct{
   background-color: aquamarine;
 }
+
+.homeDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.selection{
+  width: 300px;
+}
