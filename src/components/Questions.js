@@ -1,26 +1,42 @@
 import React from "react";
 import "../App.css"
 
-const Button = ({answer, className}) => (
-    <button className={className}>{answer}</button>
-)
-
 const Questions = ({ 
-    handleAnswer, data: {question, correct_answer, incorrect_answers}}) => {
-        const shuffledAnswers = [correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5);
-
+    showAnswers,
+    handleAnswer,
+    handleNextQuestion, 
+    data: {question, correct_answer, answers}}) => {
+        
         return( 
     <div> 
         <div>
             <h1 dangerouslySetInnerHTML={{__html: question}}/>
         </div>
         <div className="answers">
-            {shuffledAnswers.map(answer => (
+            {answers.map(answer => { 
+                const bgColor = showAnswers 
+                ? answer === correct_answer 
+                    ? 'correct' 
+                    : 'incorrect' 
+                    : 'noanswer';
+
+                return(
+
                 <button
+                    className={bgColor}
                     onClick={()=>handleAnswer(answer)}
                     dangerouslySetInnerHTML={{__html: answer}}
                 />
-            ))}
+            )})}
+            {showAnswers && (
+                <button 
+                    className="next"
+                    onClick={()=>handleNextQuestion()}
+                >
+                    Next question
+                </button>
+            )}
+            
             
         </div>
     </div>

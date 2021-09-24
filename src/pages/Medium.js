@@ -8,40 +8,54 @@ function Medium(){
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0);
-    const [gameEnded, setGameEnded] = useState(false);
+    const [showAnswers, setShowAnswers] = useState(false);
 
     useEffect(()=> {
         fetch("https://opentdb.com/api.php?amount=10&category=20&difficulty=medium")
             .then((resp) => resp.json())
             .then((data)=>{
-                setQuestions(data.results);
-            })
-    }, [])
+                const questions = data.results.map((question) =>
+                ({
+                    ...question,
+                    answers: [
+                        question.correct_answer,
+                        ...question.incorrect_answers,
+                    ].sort(() => Math.random() - 0.5 ),
+                }))
+
+                setQuestions(questions);
+            });
+    }, []);
 
     const handleAnswer = (answer) => {
-        const newIndex = currentIndex + 1
-        setCurrentIndex(newIndex);
-
-        if ( answer === questions[currentIndex].correct_answer){
-            setScore(score+1)
+        
+        if (!showAnswers){
+            if ( answer === questions[currentIndex].correct_answer){
+                setScore(score+1)
+            }
         }
-   
-        if (newIndex >= questions.length){
-            setGameEnded(true)
-        }
+        
+        setShowAnswers(true)
     } 
 
-    return gameEnded ? (
-        <div>
-            Your score is {score}/10
-        </div>
-        ) : questions.length > 0 ? (
+    const handleNextQuestion = () => {
+        setShowAnswers(false);
+
+        setCurrentIndex(currentIndex+1);
+    }
+
+    return questions.length > 0 ? (
             <div>
+                {currentIndex >= questions.length ? (
+                    <h1>Game ended! Your score is : {score}</h1>
+                ) : (
                 <Questions 
                         data={questions[currentIndex]} 
+                        showAnswers={showAnswers}
                         handleAnswer={handleAnswer}
+                        handleNextQuestion={handleNextQuestion}
                     />
-                )
+                )}
             </div>
         ) : (
             <h2>Loading...</h2>
