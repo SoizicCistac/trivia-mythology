@@ -9,7 +9,6 @@ h1{
 .answers{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 50%;
   margin-left: 25%;
 }
@@ -20,5 +19,19 @@ button{
 }
 
 .correct{
-  background-color: aquamarine;
+  color: green;
+}
+
+.incorrect{
+  color: red;
+}
+
+.noanswer{
+  color: #333;
+}
+
+.next{
+  padding: 10px;
+  width: 25%;
+  margin: auto;
 }
