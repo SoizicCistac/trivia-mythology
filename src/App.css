@@ -274,4 +274,15 @@ p{
   }
     
 
+.imgLevel{
+  width: 15%;
+  padding-right: 15px;
+}
+
+#butonHome{
+  margin-top:100px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
 }
