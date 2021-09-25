@@ -12,7 +12,7 @@ function Home (){
 
     return(
         <div>
-            <h1>Test Your Knowledge Mythological Edition</h1>
+            <h1 className="titreHome">Test Your Knowledge Mythological Edition</h1>
             <div className="iconeHome">
                 <img className="icone" src={couronne} alt="couronne"></img>
                 <img className="icone" src={homme} alt="homme maori"></img>
