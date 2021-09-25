@@ -68,6 +68,10 @@ button{
   align-items: center;
 }
 
+#buttonHome{
+  margin-top:25%;
+  margin-left:45%;
+}
 @media only screen and (max-width: 640px) {
   .answers {
     display: flex;

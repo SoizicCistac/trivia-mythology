@@ -2,6 +2,7 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Level from './pages/Level';
 import Medium from './pages/Medium';
 import Easy from './pages/Easy';
 import Hard from './pages/Hard';
@@ -11,6 +12,7 @@ function App() {
   return (
     <Switch>
       <Route exact path='/' component={Home}/>
+      <Route exact path='/level' component={Level}/>
       <Route path='/medium' component={Medium}/>
       <Route path='/Easy' component={Easy}/>
       <Route path='/Hard' component={Hard}/>
