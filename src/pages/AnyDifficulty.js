@@ -15,7 +15,7 @@ function AnyDifficulty(){
     const [score, setScore] = useState(0);
     const [showAnswers, setShowAnswers] = useState(false);
 
-    useEffect(()=> {
+    useEffect(()=> { //récupère les données de l'API Open Trivia DB
         fetch("https://opentdb.com/api.php?amount=10&category=20")
             .then((resp) => resp.json())
             .then((data)=>{
@@ -25,14 +25,16 @@ function AnyDifficulty(){
                     answers: [
                         question.correct_answer,
                         ...question.incorrect_answers,
-                    ].sort(() => Math.random() - 0.5 ),
+                    ].sort(() => Math.random() - 0.5 ), //stock la question et les différentes réponses, 
+                                                        //les réponses sont stockées en aléatoire pour que la réponse correcte ne soit pas toujours en premier
+
                 }))
 
-                setQuestions(questions);
+                setQuestions(questions); // met à jour la variable questions avec les données récupérées de l'API
             });
     }, []);
 
-    const handleAnswer = (answer) => {
+    const handleAnswer = (answer) => { // montre la réponse correcte après le choix du joueur, augmente le score si réponse correcte
         
         if (!showAnswers){
             if ( answer === questions[currentIndex].correct_answer){
@@ -43,16 +45,16 @@ function AnyDifficulty(){
         setShowAnswers(true)
     } 
 
-    const handleNextQuestion = () => {
+    const handleNextQuestion = () => { // remet toutes les réponses en neutre, passe à la question suivante
         setShowAnswers(false);
 
         setCurrentIndex(currentIndex+1);
     }
 
-    const finalScore = () => {
+    const finalScore = () => { // montre le score final et renvoi à la page de choix du niveau
         if (score < 5){
             return(
-                <div>
+                <div className="result">
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Minotaur} alt="Minotaur"/>
                     <p>Too bad, Minotaur beated you... try again to improve your score!</p>
@@ -61,7 +63,7 @@ function AnyDifficulty(){
             )
         } else if (score < 7){
             return(
-                <div>
+                <div className="result">
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Hercules} alt="Hercules"/>
                     <p>Not that bad, little beetle... But you need to improve a little bit more.... Try again!</p>
@@ -70,7 +72,7 @@ function AnyDifficulty(){
             )
         } else if ( score >= 7){
             return(
-                <div>
+                <div className="result">
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Olympus} alt="Olympus"/>
                     <p>Wow! No wonder you might be a God/Goddess in another life. You just got your ticket to the Olympus. Congratulations!</p>
@@ -82,12 +84,12 @@ function AnyDifficulty(){
 
     return questions.length > 0 ? (
             <div>
-                {currentIndex >= questions.length ? (
+                {currentIndex >= questions.length ? ( // à la fin des questions, montre le score final
                     <div>
                         {finalScore()}
                     </div>
-                ) : (
-                <Questions 
+                ) : ( // affiche le quizz
+                    <Questions //renvoie au component Questions
                         data={questions[currentIndex]} 
                         showAnswers={showAnswers}
                         handleAnswer={handleAnswer}
