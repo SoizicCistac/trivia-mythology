@@ -73,11 +73,11 @@ button{
 }
 
 #buttonHome{
-  margin-top:25%;
   margin-left:45%;
   border-radius:30px;
+  margin-top:400px;
+  background-color:chocolate;
   width:10%;
-  background-color: #352E90;
   padding-top:10px;
   padding-bottom:10px;
   color:white;
@@ -87,10 +87,16 @@ button{
   display:flex;
   flex-direction:row;
   justify-content:space-around;
+  margin-top:100px;
 }
 
 .icone{
-  width:15%;
+  width:8%;
+}
+
+.titreHome{
+  color:chocolate;
+  margin-top:5%;
 }
 
 @media only screen and (max-width: 640px) {
@@ -191,6 +197,11 @@ button{
     }
     .textFooter{
       font-size: 18px;
+    }
+    #buttonHome{
+      margin-top:70px;
+      padding-left:2px;
+      padding-right:2px;
     }
 
 }
