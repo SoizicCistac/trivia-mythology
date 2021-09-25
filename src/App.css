@@ -85,6 +85,10 @@ button{
   width:15%;
 }
 
+.selectionDiv{
+  margin-left: 15%;
+}
+
 @media only screen and (max-width: 640px) {
   .answers {
     display: flex;
@@ -168,4 +172,11 @@ button{
       font-size: 18px;
     }
 
+    .selectionDiv{
+      display: grid!important;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      width: 50%;
+      margin-left: 13%;
+    }
 }

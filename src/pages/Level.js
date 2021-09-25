@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 function Level () {
     return(
         <div className='homeDiv'>
-            <h1>Choose your level !</h1>
+          <h1>Choose your level !</h1>
+            <div className='selectionDiv'>
             <Link to='/Easy'>
                 <button className='selection'>Easy</button>
                 </Link>
@@ -19,6 +20,7 @@ function Level () {
                 <button className='selection'>Any Difficulty</button>
             </Link>
             <Footer/>
+            </div>
         </div>
     )
 }
