@@ -141,7 +141,7 @@ button{
   background-color: goldenrod;
   display:flex;
   flex-direction:row;
-  height:50px;
+  height:5%;
   justify-content:center;
   align-items: center;
   position: fixed;
@@ -164,6 +164,7 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 5%;
 }
 
 .imgHeader{
@@ -175,6 +176,11 @@ button{
   width: 15%;
   padding-right: 15px;
 }
+
+.bodyContainer{
+  height: 90%;
+}
+
 @media only screen and (min-width: 760px) {
    
     .answers{
