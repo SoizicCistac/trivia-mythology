@@ -83,4 +83,7 @@ button{
   p{
     text-align: center;
   }
+  button{
+    padding: 30px;
+  }
 }
