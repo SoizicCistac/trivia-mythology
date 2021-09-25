@@ -5,6 +5,7 @@ import "../App.css"
 import Minotaur from "../img/minotaur.svg";
 import Hercules from "../img/hercules.svg";
 import Olympus from "../img/olympus.svg";
+import Masque from "../img/masque.svg"
 
 import Questions from "../components/Questions";
 import Footer from "../components/Footer";
@@ -89,6 +90,10 @@ function AnyDifficulty(){
 
     return questions.length > 0 ? (
             <div>
+                <header className="header">
+                    <img className="imgHeader" src={Masque} alt="Masque"/>
+                    <h3 className="headerText">Any difficulty</h3>
+                </header>
                 {currentIndex >= questions.length ? ( // à la fin des questions, montre le score final
                     <div>
                         {finalScore()}
