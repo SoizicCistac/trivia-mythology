@@ -1,6 +1,8 @@
 import React from "react";
 import "../App.css"
 
+import Footer from "./Footer";
+
 const Questions = ({ 
     showAnswers,
     handleAnswer,
@@ -40,7 +42,7 @@ const Questions = ({
                </div>
             )}
             
-            
+            <Footer/>
         
     </div>
     
