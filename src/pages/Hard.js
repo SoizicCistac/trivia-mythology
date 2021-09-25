@@ -7,6 +7,7 @@ import Hercules from "../img/hercules.svg";
 import Olympus from "../img/olympus.svg";
 
 import Questions from "../components/Questions";
+import Footer from "../components/Footer";
 
 function Hard(){
 
@@ -58,7 +59,8 @@ function Hard(){
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Minotaur} alt="Minotaur"/>
                     <p>Too bad, Minotaur beated you... try again to improve your score!</p>
-                    <Link to="/">Try again</Link>
+                    <Link to="/level">Try again</Link>
+                    <Footer/>
                 </div>
             )
         } else if (score < 7){
@@ -67,7 +69,8 @@ function Hard(){
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Hercules} alt="Hercules"/>
                     <p>Not that bad, little beetle... But you need to improve a little bit more.... Try again!</p>
-                    <Link to="/">Try again</Link>
+                    <Link to="/level">Try again</Link>
+                    <Footer/>
                 </div>
             )
         } else if ( score >= 7){
@@ -76,7 +79,8 @@ function Hard(){
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Olympus} alt="Olympus"/>
                     <p>Wow! No wonder you might be a God/Goddess in another life. You just got your ticket to the Olympus. Congratulations!</p>
-                    <Link to="/">Try again</Link>
+                    <Link to="/level">Try again</Link>
+                    <Footer/>
                 </div>
             )
         }
