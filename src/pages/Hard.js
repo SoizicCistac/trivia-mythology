@@ -5,6 +5,7 @@ import "../App.css"
 import Minotaur from "../img/minotaur.svg";
 import Hercules from "../img/hercules.svg";
 import Olympus from "../img/olympus.svg";
+import Izanagi from "../img/izanagi.svg"
 
 import Questions from "../components/Questions";
 import Footer from "../components/Footer";
@@ -88,6 +89,10 @@ function Hard(){
 
     return questions.length > 0 ? (
             <div>
+                <header className="header">
+                    <img className="imgHeader" src={Izanagi} alt="Izanagi"/>
+                    <h3 className="headerText">Level Hard</h3>
+                </header>
                 {currentIndex >= questions.length ? ( // à la fin des questions, montre le score final
                     <div>
                         {finalScore()}

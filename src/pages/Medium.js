@@ -5,6 +5,7 @@ import "../App.css"
 import Minotaur from "../img/minotaur.svg";
 import Hercules from "../img/hercules.svg";
 import Olympus from "../img/olympus.svg";
+import Thor from "../img/thor.svg"
 
 import Questions from "../components/Questions";
 import Footer from "../components/Footer";
@@ -87,6 +88,10 @@ function Medium(){
 
     return questions.length > 0 ? (
             <div> 
+                <header className="header">
+                    <img className="imgHeader" src={Thor} alt="Thor"/>
+                    <h3 className="headerText">Level Medium</h3>
+                </header>
                 {currentIndex >= questions.length ? ( // à la fin des questions, montre le score final
                     <div>
                         {finalScore()}
