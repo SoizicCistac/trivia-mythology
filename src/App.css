@@ -184,6 +184,12 @@ button{
       text-align: center;
     }
 
+    button{
+      padding: 70px;
+      width: 350px;
+      font-size: 1.5em;
+      margin-left: -7%;
+    }
     .textFooter{
       font-size: 18px;
     }
