@@ -2,24 +2,85 @@
 
 *{
   text-decoration: none;
+  scrollbar-width: none;
 }
 
-h1{
-  font-family: 'Crimson';
+:root{
+  --font-title: 'Crimson';
+  --font-text: 'Work Sans';
+  --banner-color: goldenrod;
+  --font-size-mobile-text: 16px;
+  --font-size-mobile-title: 30px;
+  --font-size-desktop-text: 18px;
+  --font-size-desktop-title: 40px;
+}
+
+.header{
+  font-family: var(--font-text);
+  background-color: goldenrod;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 5%;
+  width: 100%;
+}
+
+.imgHeader{
+  width: 5%;
+  padding-right: 30px;
+}
+
+.bodyContainer{
+  height: 90%;
+}
+
+.titreHome{
+  color:chocolate;
+  font-family: var(--font-title);
+  font-size: var(--font-size-mobile-title);
+  text-align: center;
+  margin-top:5%;
+  white-space: pre-wrap;
+}
+
+.iconeDesktop{
+  display: none;
+}
+
+.iconeLine1, .iconeLine2{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  margin-top:100px;
+}
+
+.icone{
+  width:12%;
+}
+
+#buttonHome{
+  display: block;
+  margin:auto;
+  border-radius:30px;
+  margin-top:100px;
+  background-color:chocolate;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:white;
+  font-weight: bold;
+}
+
+.title{
+  font-family: var(--font-title);
+  font-size: var(--font-size-mobile-title);
+  margin-bottom: 30px;
 }
 
 button{
-  font-family: 'Work Sans';
-}
-
-button{
+  font-family: var(--font-text);
   padding: 40px;
   margin-bottom: 20px;
   border-radius: 10px;
-}
-
-.correct{
-  color: green;
 }
 
 .homeDiv{
@@ -28,24 +89,64 @@ button{
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-top: 40px;
 }
 
 .selection{
-  width: 300px;
+  width: 300px !important;
+  height: 100px !important;
+  margin-bottom: 30px;
+  font-size: var(--font-size-mobile-text);
+  font-weight: bold;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
   color: green;
 }
 
+.imgLevel{
+  width: 15%;
+  padding-right: 15px;
+}
+
+.question{
+  font-family:var(--font-title);
+  font-size: var(--font-size-mobile-title);
+  text-align: center;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.correct{
+  font-family: var(--font-text);
+  font-size: var(--font-size-mobile-text);
+  font-weight: bold;
+  color: green;
+  width: 300px !important;
+  height: 100px !important;
+}
+
 .incorrect{
+  font-family: var(--font-text);
+  font-size: var(--font-size-mobile-text);
+  font-weight: bold;
   color: red;
+  width: 300px !important;
+  height: 100px !important;
 }
 
 .noanswer{
+  font-family: var(--font-text);
+  font-size: var(--font-size-mobile-text);
+  font-weight: bold;
   color: #333;
+  width: 300px !important;
+  height: 100px !important;
 }
 
 .nextBtnDiv{
@@ -57,6 +158,9 @@ button{
   padding: 10px;
   width: 25%;
   margin: auto;
+  font-weight: bold;
+  font-family: var(--font-text);
+  font-size: var(--font-size-mobile-text);
 }
 
 .result{
@@ -72,69 +176,8 @@ button{
   align-items: center;
 }
 
-#buttonHome{
-  margin-left:45%;
-  border-radius:30px;
-  margin-top:400px;
-  background-color:chocolate;
-  width:10%;
-  padding-top:10px;
-  padding-bottom:10px;
-  color:white;
-}
-
-.iconeHome{
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
-  margin-top:100px;
-}
-
-.icone{
-  width:8%;
-}
-
-.titreHome{
-  color:chocolate;
-  margin-top:5%;
-}
-
-.selectionDiv{
-  margin-left: 15%;
-}
-
-@media only screen and (max-width: 640px) {
-  .answers {
-    display: flex;
-    flex-direction: column;
-  }
-  h1{
-    font-size: 25px;
-  }
-  p{
-    text-align: center;
-  }
-}
-
-.answers {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-h1{
-  font-size: 25px;
-  text-align: center;
-}
-
 p{
   text-align: center;
-}
-
-button{
-  padding: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 50%;
 }
 
 .footer{
@@ -158,67 +201,77 @@ button{
   font-family: 'Work sans';
 }
 
-.header{
-  font-family: 'Work sans';
-  background-color: goldenrod;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 5%;
-}
+@media screen and (min-width: 1024px) {
+  .iconeDesktop{
+    margin-bottom: 100px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    margin-top:100px;
+  }
 
-.imgHeader{
-  width: 5%;
-  padding-right: 30px;
-}
+  .icone{
+    width: 10%;
+  }
 
-.imgLevel{
-  width: 15%;
-  padding-right: 15px;
-}
+  .iconeMobile{
+    display: none;
+  }
 
-.bodyContainer{
-  height: 90%;
-}
+  #buttonHome{
+    margin-top:70px;
+    padding-left:2px;
+    padding-right:2px;
+  }
 
-@media only screen and (min-width: 760px) {
-   
-    .answers{
-      display: grid!important;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 20px;
-      width: 50%;
-      margin-left: 30%;
-    }
+  .selectionDiv{
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10%;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+  }
 
-    h1{
-      margin-left: 25%;
-      margin-right: 25%;
-      padding-bottom: 30px;
-      font-size: 30px;
-      text-align: center;
-    }
+  .selection{
+    font-size: var(--font-size-desktop-text);
+  }
+  
+  .imgLevel{
+    width: 30%;
+  }  
 
-    button{
-      padding: 70px;
-      width: 350px;
-      font-size: 1.5em;
-      margin-left: -7%;
-    }
-    .textFooter{
-      font-size: 18px;
-    }
-    #buttonHome{
-      margin-top:70px;
-      padding-left:2px;
-      padding-right:2px;
-    }
+  .title, .question{
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size-desktop-title);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-    .selectionDiv{
-      display: grid!important;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 20px;
-      width: 50%;
-      margin-left: 13%;
-    }
+  .answers{
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10%;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+    font-size: var(--font-size-desktop-text);
+    text-align: center;
+    align-items: center;
+  }
+
+  button{
+    padding: 70px;
+    width: 350px;
+    font-size: 1.5em;
+    margin-left: -7%;
+    text-align: center !important;
+  }
+
+  .textFooter{
+    font-size: 18px;
+  }
+    
+
 }

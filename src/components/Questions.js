@@ -11,39 +11,39 @@ const Questions = ({
         
         return( 
     <div> 
-        <div>
-            <h1 dangerouslySetInnerHTML={{__html: question}} /* Affiche la question récupérée par l'API *//> 
-        </div>
-        <div className="answers">
-            {answers.map(answer => { // change le className de la réponse selon si réponse correcte ou incorrecte
-                const bgColor = showAnswers 
-                ? answer === correct_answer 
-                    ? 'correct' 
-                    : 'incorrect' 
-                    : 'noanswer';
+        <div className="bodyContainer">
+            <div>
+                <h1 className="question" dangerouslySetInnerHTML={{__html: question}} /* Affiche la question récupérée par l'API *//> 
+            </div>
+            <div className="answers">
+                {answers.map(answer => { // change le className de la réponse selon si réponse correcte ou incorrecte
+                    const bgColor = showAnswers 
+                    ? answer === correct_answer 
+                        ? 'correct' 
+                        : 'incorrect' 
+                        : 'noanswer';
 
-                return(
+                    return(
 
-                <button // affiche un bouton par réponse
-                    className={bgColor} 
-                    onClick={()=>handleAnswer(answer)}
-                    dangerouslySetInnerHTML={{__html: answer}}
-                />
-            )})}
+                    <button // affiche un bouton par réponse
+                        className={bgColor} 
+                        onClick={()=>handleAnswer(answer)}
+                        dangerouslySetInnerHTML={{__html: answer}}
+                    />
+                )})}
+            </div>
+                {showAnswers && (
+                    <div className='nextBtnDiv'>
+                    <button  // bouton pour passer à la question suivante une fois les réponses affichées
+                        className="next"
+                        onClick={()=>handleNextQuestion()}
+                    >
+                        Next question
+                    </button>
+                    </div>
+                )}
         </div>
-            {showAnswers && (
-               <div className='nextBtnDiv'>
-                <button  // bouton pour passer à la question suivante une fois les réponses affichées
-                    className="next"
-                    onClick={()=>handleNextQuestion()}
-                >
-                    Next question
-                </button>
-               </div>
-            )}
-            
-            <Footer/>
-        
+        <Footer/>  
     </div>
     
 )};

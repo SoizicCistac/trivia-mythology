@@ -76,6 +76,7 @@ function Medium(){
         } else if ( score >= 7){
             return(
                 <div className="result">
+                    
                     <h2>Your score is : {score}/10 !</h2>
                     <img className="imgResult" src={Olympus} alt="Olympus"/>
                     <p>Wow! No wonder you might be a God/Goddess in another life. You just got your ticket to the Olympus. Congratulations!</p>

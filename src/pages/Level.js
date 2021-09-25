@@ -13,8 +13,8 @@ function Level () {
             <header className="header">
                 <h3 className="headerText">Trivia Mythology</h3>
             </header>
-            <div className='homeDiv'>       
-                <h1>Choose your level !</h1>
+            <div className="bodyContainer homeDiv">       
+                <h1 className="title">Choose your level !</h1>
                 <div className='selectionDiv'>
                 <Link to='/Easy'>
                     <button className='selection'>
@@ -38,8 +38,8 @@ function Level () {
                     Any Difficulty</button>
                 </Link>
                 </div>
-                <Footer/>
             </div>
+            <Footer/>
         </div>
         
     )
