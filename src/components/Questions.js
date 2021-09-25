@@ -28,17 +28,20 @@ const Questions = ({
                     dangerouslySetInnerHTML={{__html: answer}}
                 />
             )})}
+        </div>
             {showAnswers && (
+               <div className='nextBtnDiv'>
                 <button 
                     className="next"
                     onClick={()=>handleNextQuestion()}
                 >
                     Next question
                 </button>
+               </div>
             )}
             
             
-        </div>
+        
     </div>
     
 )};
