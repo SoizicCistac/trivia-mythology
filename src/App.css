@@ -1,17 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Work+Sans:wght@200&display=swap');
+
 h1{
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-bottom: 30px;
-  font-size: 30px;
-  text-align: center;
+  font-family: 'Work Sans';
 }
 
-.answers{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  width: 50%;
-  margin-left: 25%;
+button{
+  font-family: 'Crimson';
 }
 
 button{
@@ -70,20 +65,44 @@ button{
 
 #buttonHome{
   margin-top:25%;
-  margin-left:45%;
+  margin-left:25%;
 }
-@media only screen and (max-width: 640px) {
-  .answers {
-    display: flex;
-    flex-direction: column;
-  }
-  h1{
-    font-size: 25px;
-  }
-  p{
-    text-align: center;
-  }
-  button{
-    padding: 30px;
-  }
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  font-size: 25px;
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+button{
+  padding: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+@media only screen and (min-width: 760px) {
+   
+    .answers{
+      display: grid!important;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      width: 50%;
+      margin-left: 30%;
+    }
+
+    h1{
+      margin-left: 25%;
+      margin-right: 25%;
+      padding-bottom: 30px;
+      font-size: 30px;
+      text-align: center;
+    }
+
 }
