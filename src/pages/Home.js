@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Home () {
     return(
         <div className='homeDiv'>
-            <h1>Test Your Knowledge : Mythological Edition</h1>
+            <h1>Test Your Knowledge : Mythology Edition</h1>
             <Link to='/Easy'>
                 <button className='selection'>Easy</button>
                 </Link>

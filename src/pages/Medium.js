@@ -15,8 +15,8 @@ function Medium(){
     const [score, setScore] = useState(0);
     const [showAnswers, setShowAnswers] = useState(false);
 
-    useEffect(()=> {
-        fetch("https://opentdb.com/api.php?amount=10&category=20&difficulty=medium")
+    useEffect(()=> { //récupère les données de l'API Open Trivia DB
+        fetch("https://opentdb.com/api.php?amount=10&category=20&difficulty=medium") 
             .then((resp) => resp.json())
             .then((data)=>{
                 const questions = data.results.map((question) =>
@@ -25,14 +25,15 @@ function Medium(){
                     answers: [
                         question.correct_answer,
                         ...question.incorrect_answers,
-                    ].sort(() => Math.random() - 0.5 ),
+                    ].sort(() => Math.random() - 0.5 ), //stock la question et les différentes réponses, 
+                                                        //les réponses sont stockées en aléatoire pour que la réponse correcte ne soit pas toujours en premier
                 }))
 
-                setQuestions(questions);
+                setQuestions(questions); // met à jour la variable questions avec les données récupérées de l'API
             });
     }, []);
 
-    const handleAnswer = (answer) => {
+    const handleAnswer = (answer) => { // montre la réponse correcte après le choix du joueur, augmente le score si réponse correcte
         
         if (!showAnswers){
             if ( answer === questions[currentIndex].correct_answer){
@@ -43,13 +44,13 @@ function Medium(){
         setShowAnswers(true)
     } 
 
-    const handleNextQuestion = () => {
+    const handleNextQuestion = () => { // remet toutes les réponses en neutre, passe à la question suivante
         setShowAnswers(false);
 
         setCurrentIndex(currentIndex+1);
     }
 
-    const finalScore = () => {
+    const finalScore = () => { // montre le score final et renvoi à la page de choix du niveau
         if (score < 5){
             return(
                 <div className="result">
@@ -81,13 +82,13 @@ function Medium(){
     }
 
     return questions.length > 0 ? (
-            <div>
-                {currentIndex >= questions.length ? (
+            <div> 
+                {currentIndex >= questions.length ? ( // à la fin des questions, montre le score final
                     <div>
                         {finalScore()}
                     </div>
-                ) : (
-                <Questions 
+                ) : ( // affiche le quizz
+                <Questions //renvoie au component Questions
                         data={questions[currentIndex]} 
                         showAnswers={showAnswers}
                         handleAnswer={handleAnswer}
