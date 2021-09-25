@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Level () {
     return(
         <div className='homeDiv'>
-            <h1>Test Your Knowledge : Mythological Edition</h1>
+            <h1>Choose your level !</h1>
             <Link to='/Easy'>
                 <button className='selection'>Easy</button>
                 </Link>
@@ -17,6 +18,7 @@ function Level () {
             <Link to='/AnyDifficulty'>
                 <button className='selection'>Any Difficulty</button>
             </Link>
+            <Footer/>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import homme from "../img/homme.svg";
 import izanagi from "../img/izanagi.svg";
 import masque from "../img/masque.svg";
 import thor from "../img/thor.svg";
+import Footer from "../components/Footer";
 
 function Home (){
 
@@ -22,6 +23,7 @@ function Home (){
             <Link to="/level">
                 <button id="buttonHome">Play</button>
             </Link>  
+            <Footer/>
         </div>
     )
 }
