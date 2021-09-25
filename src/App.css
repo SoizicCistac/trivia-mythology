@@ -61,3 +61,8 @@ button{
   width:300px;
   align-items: center;
 }
+
+#buttonHome{
+  margin-top:25%;
+  margin-left:45%;
+}
