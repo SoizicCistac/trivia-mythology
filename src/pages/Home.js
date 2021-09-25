@@ -12,6 +12,9 @@ function Home (){
 
     return(
         <div>
+            <header className="header">
+                <h3 className="headerText">Trivia Mythology</h3>
+            </header>
             <h1>Test Your Knowledge Mythological Edition</h1>
             <div className="iconeHome">
                 <img className="icone" src={couronne} alt="couronne"></img>

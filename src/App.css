@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Work+Sans:wght@200&display=swap');
 
+*{
+  text-decoration: none;
+}
+
 h1{
   font-family: 'Crimson';
 }
@@ -29,6 +33,11 @@ button{
 
 .selection{
   width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   color: green;
 }
 
@@ -120,7 +129,7 @@ button{
 }
 
 .footer{
-  background-color: rgb(186, 158, 46);
+  background-color: goldenrod;
   display:flex;
   flex-direction:row;
   height:50px;
@@ -140,6 +149,23 @@ button{
   font-family: 'Work sans';
 }
 
+.header{
+  font-family: 'Work sans';
+  background-color: goldenrod;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.imgHeader{
+  width: 5%;
+  padding-right: 30px;
+}
+
+.imgLevel{
+  width: 15%;
+  padding-right: 15px;
+}
 @media only screen and (min-width: 760px) {
    
     .answers{
