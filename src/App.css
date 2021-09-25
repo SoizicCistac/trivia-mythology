@@ -71,7 +71,24 @@ button{
 #buttonHome{
   margin-top:25%;
   margin-left:45%;
+  border-radius:30px;
+  width:10%;
+  background-color: #352E90;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:white;
 }
+
+.iconeHome{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+.icone{
+  width:15%;
+}
+
 @media only screen and (max-width: 640px) {
   .answers {
     display: flex;
