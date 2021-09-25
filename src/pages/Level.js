@@ -17,23 +17,23 @@ function Level () {
                 <h1>Choose your level !</h1>
                 <Link to='/Easy'>
                     <button className='selection'>
-                        <img className="imgLevel" src={Crown}/>
+                        <img className="imgLevel" src={Crown} alt="Crown"/>
                         Easy
                         </button>
                     </Link>
                 <Link to='/medium'>
                     <button className='selection'>
-                        <img className="imgLevel" src={Thor}/>
+                        <img className="imgLevel" src={Thor} alt="Thor"/>
                         Medium</button>
                     </Link>
                 <Link to='/Hard'>
                     <button className='selection'>
-                        <img className="imgLevel" src={Izanagi}/>
+                        <img className="imgLevel" src={Izanagi} alt="Izanagi"/>
                     Hard</button>
                 </Link>
                 <Link to='/AnyDifficulty'>
                     <button className='selection'>
-                    <img className="imgLevel" src={Masque}/>
+                    <img className="imgLevel" src={Masque} alt="Masque"/>
                     Any Difficulty</button>
                 </Link>
                 <Footer/>
