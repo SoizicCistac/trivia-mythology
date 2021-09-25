@@ -19,7 +19,7 @@ button{
 }
 
 .correct{
-  background-color: aquamarine;
+  color: green;
 }
 
 .homeDiv{
@@ -47,4 +47,17 @@ button{
   padding: 10px;
   width: 25%;
   margin: auto;
+}
+
+.result{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.imgResult{
+  width:300px;
+  align-items: center;
 }

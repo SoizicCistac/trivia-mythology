@@ -3,9 +3,9 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Medium from './pages/Medium';
-import Easy from './components/Easy';
-import Hard from './components/Hard';
-import AnyDifficulty from './components/AnyDifficulty';
+import Easy from './pages/Easy';
+import Hard from './pages/Hard';
+import AnyDifficulty from './pages/AnyDifficulty';
 
 function App() {
   return (
